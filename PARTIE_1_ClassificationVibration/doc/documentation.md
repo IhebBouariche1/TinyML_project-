@@ -59,9 +59,5 @@ Le modèle entraîné est exporté au format `.h` ou `.tflite`, puis utilisé da
 
 Ce projet montre comment collecter des données de vibration, les utiliser pour entraîner un modèle de classification, puis déployer ce modèle sur une carte Arduino pour réaliser des inférences en temps réel. Chaque étape du processus est soigneusement documentée et structurée pour faciliter sa compréhension et son utilisation.
 
-## License
-
-Distribué sous la licence MIT. Voir `LICENSE` pour plus d'informations.
-
 
 
