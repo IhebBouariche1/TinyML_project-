@@ -27,7 +27,7 @@ model = tf.keras.Sequential([
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Entrainemen du réseau
-model.fit(X_train, y_train, epochs=10, batch_size=8)
+model.fit(X_train, y_train, epochs=50, batch_size=16)
 
 
 # Évaluer le modèle sur les données de test
