@@ -50,15 +50,20 @@ J'ai collécté des donnée pour les vibration verticale et horizontale.
 
 ### 2. Entraînement du Modèle
 
-Une fois que les données ont été collectées, elles sont traitées dans des notebooks Jupyter, où elles sont nettoyées et préparées pour l'entraînement. Un modèle de réseau de neurones est ensuite entraîné pour classer les vibrations en catégories horizontales ou verticales. Ce modèle peut être un modèle simple, mais suffisamment performant pour effectuer des prédictions en temps réel sur Arduino.
+Une fois que les données ont été collectées, Elles sont traité et préparé pour l'entrainement. Une partie des données sera pour l'apprentissage et l'autre pour le teste.
+Un modèle de réseau de neurones est défini et entraîné sur les données d'entrainement pour classer les vibrations en catégories horizontales ou verticales. 
+![Capture d’écran (1111)](https://github.com/user-attachments/assets/f1c6ae40-55f9-4d79-a338-3761140f92c2)
+
+Ce modèle a une petite taille et simple, mais suffisamment performant pour effectuer des prédictions en temps réel sur Arduino.
+![Capture d’écran (1112)](https://github.com/user-attachments/assets/8abb1937-3c49-46e2-b779-cb457e2419a9)
+
 
 ### 3. Inférence en Temps Réel (Arduino)
 
-Le modèle entraîné est exporté au format `.h` ou `.tflite`, puis utilisé dans un code Arduino pour effectuer des inférences en temps réel. L'Arduino reçoit les valeurs de l'accéléromètre, applique le modèle et classe les vibrations en fonction de leur orientation.
+Le modèle entraîné est exporté au format `.h`, puis importé avec un code Arduino pour effectuer des inférences en temps réel. L'Arduino prends les valeurs de l'accéléromètre, applique le modèle et classe les vibrations.
 
 ## Conclusion
 
-Ce projet montre comment collecter des données de vibration, les utiliser pour entraîner un modèle de classification, puis déployer ce modèle sur une carte Arduino pour réaliser des inférences en temps réel. Chaque étape du processus est soigneusement documentée et structurée pour faciliter sa compréhension et son utilisation.
-
+Ce projet montre comment collecter des données de vibration, les utiliser pour entraîner un modèle de classification, puis déployer ce modèle sur une carte Arduino pour réaliser des inférences en temps réel. 
 
 
