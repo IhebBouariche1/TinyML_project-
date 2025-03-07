@@ -45,7 +45,8 @@ Le dossier `doc/` contient la documentation détaillée du projet. Cela inclut d
 
 ### 1. Collecte des Données (Arduino)
 
-Dans la première partie du projet, l'Arduino collecte les données d'accélération de l'accéléromètre et les enregistre dans un fichier CSV. Cela permet de créer un ensemble de données qui peut ensuite être utilisé pour l'entraînement du modèle.
+Dans la première partie du projet, l'Arduino collecte les données d'accélération de l'accéléromètre et un code python écoute le port série connécté avec la carte arduino pour l'enregistrement des données dans un fichier CSV. Cela permet de créer un ensemble de données qui peut ensuite être utilisé pour l'entraînement du modèle. 
+J'ai collécté des donnée pour les vibration verticale et horizontale.
 
 ### 2. Entraînement du Modèle
 
