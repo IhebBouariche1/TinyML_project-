@@ -11,15 +11,11 @@ La structure du projet est divisée en plusieurs parties, chacune responsable d'
 
 Ce répertoire principal contient tous les fichiers liés à la partie du projet où les vibrations sont collectées, analysées et utilisées pour entraîner un modèle de classification, puis pour réaliser des inférences en temps réel sur une carte Arduino.
 
-#### 2. `README.md`
-
-Le fichier `README.md` situé dans la racine de `PARTIE_1_ClassificationVibrations/` fournit des explications générales sur le projet, sa structure, son objectif, et comment utiliser les différents fichiers. Ce fichier sert d'introduction pour l'ensemble du projet.
-
 #### 3. `1-DataGeneration_Arduino/`
 
 Ce répertoire contient tout le code nécessaire pour la génération et la collecte des données de vibration à partir d'un accéléromètre connecté à la carte Arduino. Les données collectées comprennent les valeurs d'accélération dans les trois axes (X, Y, Z), qui seront utilisées pour l'entraînement du modèle.
 
-- **Fichier principal** : `data_generation.ino` : Ce code Arduino est chargé de lire les données depuis l'accéléromètre, de les formater et de les enregistrer dans un fichier de sortie (typiquement sous forme de fichier CSV) pour une analyse ultérieure.
+- **Fichier principal** : `data_generation.ino` : Ce code Arduino est chargé de lire les données depuis l'accéléromètre.
 
 #### 4. `2-Training/`
 
@@ -27,13 +23,13 @@ Ce répertoire est responsable de la préparation et de l'entraînement du modè
 
 - **`dataset/`** : Ce dossier contient les données d'entraînement collectées via Arduino. Une fois que les vibrations ont été générées et collectées, elles sont stockées ici pour être utilisées dans l'entraînement du modèle.
   
-- **`notebooks/`** : Ce dossier contient des fichiers Jupyter Notebook pour faciliter l'analyse des données et l'entraînement du modèle. Le fichier principal `training_vibrations.ipynb` est utilisé pour effectuer l'analyse exploratoire des données, nettoyer les données brutes et entraîner un modèle de réseau de neurones pour classifier les vibrations horizontales et verticales.
+- **`notebooks/`** : Ce dossier contient un fichier python pour l'analyse et l'entraînement d'un modèle de réseau de neuron. Le fichier principal `training?py` est utilisé pour effectuer le traitement des données, et pour entraîner un modèle de réseau de neurones pour classifier les vibrations horizontales et verticales.
 
-- **`models/`** : Ce dossier contient les modèles entraînés sous différents formats (par exemple, `.h5` pour un modèle complet ou `.tflite` pour la version TensorFlow Lite destinée à être utilisée sur Arduino). Une fois l'entraînement terminé, le modèle est sauvegardé dans ce répertoire.
+- **`models/`** : Ce dossier contient les modèles entraînés sous format .h. Une fois l'entraînement terminé, le modèle est sauvegardé dans ce répertoire.
 
 #### 5. `3-Inference_Arduino/`
 
-Ce répertoire contient le code nécessaire pour utiliser le modèle entraîné sur la carte Arduino afin de faire des inférences en temps réel. Une fois que le modèle est exporté sous un format compatible avec Arduino (comme un fichier `.h` ou `.tflite`), ce répertoire contient le code Arduino nécessaire pour charger et utiliser ce modèle sur la carte afin de classer les vibrations pendant l'exécution.
+Ce répertoire contient le code nécessaire pour utiliser le modèle entraîné sur la carte Arduino afin de faire des inférences en temps réel. Une fois que le modèle est exporté sous un format compatible avec Arduino (comme un fichier `.h`), ce répertoire contient le code Arduino nécessaire pour charger et utiliser ce modèle sur la carte afin de classer les vibrations pendant l'exécution.
 
 - **Fichier principal** : `inference_vibrations.ino` : Ce code charge le modèle exporté et effectue des prédictions sur les données en temps réel générées par l'accéléromètre.
 
@@ -61,6 +57,9 @@ Ce modèle a une petite taille et simple, mais suffisamment performant pour effe
 ### 3. Inférence en Temps Réel (Arduino)
 
 Le modèle entraîné est exporté au format `.h`, puis importé avec un code Arduino pour effectuer des inférences en temps réel. L'Arduino prends les valeurs de l'accéléromètre, applique le modèle et classe les vibrations.
+Voici les résultats obtenus en temps réel: 
+
+![Capture d’écran (1108)](https://github.com/user-attachments/assets/70fee1fd-9566-4972-8e3f-732695629b60)
 
 ## Conclusion
 
